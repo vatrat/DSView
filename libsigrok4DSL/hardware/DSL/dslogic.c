@@ -37,10 +37,10 @@
 #define max(a,b) ((a)>(b)?(a):(b))
 
 static const unsigned int single_buffer_time = 20;
-static const unsigned int total_buffer_time = 200;
+/* static const unsigned int total_buffer_time = 200; */
 static const unsigned int instant_buffer_size = 1024 * 1024;
-static const unsigned int cons_buffer_size = 128;
-static const unsigned int buffer_cnt = 4;
+/* static const unsigned int cons_buffer_size = 128; */
+/* static const unsigned int buffer_cnt = 4; */
 
 static struct sr_dev_mode mode_list[] = {
     {"LA", LOGIC},
@@ -180,9 +180,9 @@ static const int32_t sessions_pro[] = {
     SR_CONF_TRIGGER_MARGIN,
 };
 
-static const int32_t ch_sessions[] = {
-    SR_CONF_VDIV
-};
+/* static const int32_t ch_sessions[] = { */
+/*     SR_CONF_VDIV */
+/* }; */
 
 static const char *probe_names[] = {
 	"0",  "1",  "2",  "3",  "4",  "5",  "6",  "7",
@@ -258,7 +258,7 @@ static const uint64_t samplecounts[] = {
 };
 
 static uint16_t opmodes_show_count = 3;
-static const uint8_t zero_base_addr = 0x80;
+/* static const uint8_t zero_base_addr = 0x80; */
 
 SR_PRIV struct sr_dev_driver DSLogic_driver_info;
 static struct sr_dev_driver *di = &DSLogic_driver_info;
@@ -662,9 +662,9 @@ static int DSLogic_dev_open(struct sr_dev_inst *sdi)
 	devc = sdi->priv;
 	usb = sdi->conn;
 
-    if (sdi->status == SR_ST_ACTIVE)
-		/* Device is already in use. */
-        return SR_ERR;
+  if (sdi->status == SR_ST_ACTIVE)
+  /* Device is already in use. */
+      return SR_ERR;
 
 	skip = 0;
     device_count = libusb_get_device_list(drvc->sr_ctx->libusb_ctx, &devlist);
