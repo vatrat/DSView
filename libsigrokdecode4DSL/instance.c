@@ -19,8 +19,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
 #include "libsigrokdecode-internal.h" /* First, so we avoid a _POSIX_C_SOURCE warning. */
+#include "config.h"
 #include "libsigrokdecode.h"
 #include <glib.h>
 #include <inttypes.h>
@@ -597,8 +597,8 @@ SRD_PRIV int srd_inst_decode(const struct srd_decoder_inst *di, uint8_t chunk_ty
 	}
     Py_DecRef(py_res);
 
-    if (logic->logic_mask == 0)
-        logic->itercnt -= logic->samplenum;
+  if (logic->logic_mask == 0)
+      logic->itercnt -= logic->samplenum;
 
 	return SRD_OK;
 }
